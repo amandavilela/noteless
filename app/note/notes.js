@@ -11,7 +11,7 @@
     //this.object = $firebaseObject(ref);
   
     //Funcoes padrão do Firebase para escutar mudanças e inclusões de um Child.
-    var notes = [];  
+    var notes = [];
     ref.on('child_added', e => {
       notes.push(e.val());
       console.log(e.val());
