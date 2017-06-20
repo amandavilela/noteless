@@ -19,34 +19,24 @@
     });*/
 
     function getNote(id) {
-<<<<<<< HEAD
       var note = vm.notes.map(function (x) { if (x.id == id) return x; else return "" });
-=======
-      var note = vm.notes.map(function(x) { if (x.id == id) return x; else return "";});
->>>>>>> 1c4407c4849440e793a7f077716ae711ddcff77b
       return note;
     }
 
     (function isEditing() {
       $stateParams.id ? vm.editing = true : vm.editing = false;
-<<<<<<< HEAD
       if (vm.notes.length > 0) {
         vm.note = angular.copy(getNote($stateParams.id));
         console.log(note);
-=======
-  	  if (vm.notes.length > 0) {
-  		vm.note = angular.copy(getNote($stateParams.id));
-  		console.log(note);
->>>>>>> 1c4407c4849440e793a7f077716ae711ddcff77b
       }
     })();
 
     vm.add = add;
-    function add(note) {    
+    function add(note) {
       var newKey = database.push().key;
 
       note = {"id":newKey,"subject":note.subject,"body":note.body, "postDate":Date()};
-      
+
       var updates = {};
       updates[newKey] = note;
 
@@ -66,8 +56,8 @@
             }).catch(function (error) {
                 // An error occurred!
                 console.log(error.code + " - " + error.message);
-            });        
-        
+            });
+
         vm.notes.splice(removeNote, 1);
       }
       console.log(vm.notes);
