@@ -3,13 +3,12 @@
   angular.module('myApp.note')
     .controller('NotesCtrl', NotesController);
 
-
   function NotesController($stateParams, $firebaseArray) {
 
 	vm = this;
     var database = firebase.database().ref('notes');
     vm.notes = $firebaseArray(database);
-  
+
     /*//Funcoes padrão do Firebase para escutar mudanças e inclusões de um Child.
     database.on('child_added', e => {
       vm.notes.push(e.val());
@@ -20,16 +19,16 @@
     });*/
 
     function getNote(id) {
-      var note = vm.notes.map(function(x) { if (x.id == id) return x; else return ""});
+      var note = vm.notes.map(function(x) { if (x.id == id) return x; else return "";});
       return note;
     }
 
     (function isEditing () {
       $stateParams.id ? vm.editing = true : vm.editing = false;
-	  if (vm.notes.length > 0) {
-		vm.note = angular.copy(getNote($stateParams.id));
-		console.log(note);
-      }	  
+  	  if (vm.notes.length > 0) {
+  		vm.note = angular.copy(getNote($stateParams.id));
+  		console.log(note);
+      }
     })();
 
     vm.add = add;
@@ -59,5 +58,5 @@
       console.log(vm.notes);
     }
 
-  };
+  }
 })();

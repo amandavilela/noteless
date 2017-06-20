@@ -6,9 +6,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-  	"angular": "~1.4.0",
+    "angular": "~1.4.0",
     "angular-mocks": "~1.4.0",
-  	"angular-ui-router": "~0.2",
-    "fontawesome": "~4.2.0"
+    "angular-ui-router": "~0.2",
+    "fontawesome": "~4.2.0",
+    "textAngular": "^1.5.16"
   }
 }
