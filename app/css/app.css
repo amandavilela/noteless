@@ -1,12 +1,49 @@
- @import url('https://fonts.googleapis.com/css?family=Lato:900i');
+@import url('https://fonts.googleapis.com/css?family=Lato:900i');
 
- h1 {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-style: italic;
-    text-align: center;
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
 }
 
 h1 a, h1 a:hover, h1 a:visited {
-   color: #7b1fa2;
+  color: #7b1fa2;
+}
+
+.ta-toolbar {
+  background-color: #F0F0F0;
+  padding: 10px 10px 5px;
+  margin-left: 0px;
+  border: 1px solid #EEE;
+}
+
+.ta-toolbar .btn-group {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.ta-editor, .white-box {
+  padding: 10px;
+  background-color: #FFF;
+  border: 1px solid #EEE;
+}
+
+textarea.ta-bind {
+  width: 100%;
+}
+
+.ta-root .btn, .ta-root .btn-large {
+  color: #555;
+  background: #fff;
+}
+
+.ta-root.focussed > .ta-scroll-window.form-control {
+  border-color: #EEE;
+  outline: 0;
+  box-shadow: none;
+}
+
+.ta-root ul {
+  list-style: disc;
 }

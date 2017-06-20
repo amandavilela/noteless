@@ -3,7 +3,6 @@
   angular.module('myApp.note')
     .controller('NotesCtrl', NotesController);
 
-
   function NotesController($stateParams, $firebaseArray) {
 
     vm = this;
@@ -20,15 +19,25 @@
     });*/
 
     function getNote(id) {
+<<<<<<< HEAD
       var note = vm.notes.map(function (x) { if (x.id == id) return x; else return "" });
+=======
+      var note = vm.notes.map(function(x) { if (x.id == id) return x; else return "";});
+>>>>>>> 1c4407c4849440e793a7f077716ae711ddcff77b
       return note;
     }
 
     (function isEditing() {
       $stateParams.id ? vm.editing = true : vm.editing = false;
+<<<<<<< HEAD
       if (vm.notes.length > 0) {
         vm.note = angular.copy(getNote($stateParams.id));
         console.log(note);
+=======
+  	  if (vm.notes.length > 0) {
+  		vm.note = angular.copy(getNote($stateParams.id));
+  		console.log(note);
+>>>>>>> 1c4407c4849440e793a7f077716ae711ddcff77b
       }
     })();
 
@@ -76,5 +85,5 @@
       console.log(vm.notes);
     }
 
-  };
+  }
 })();

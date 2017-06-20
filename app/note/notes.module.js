@@ -1,7 +1,8 @@
 (function() {
     angular.module( 'myApp.note', [
         'ui.router',
-        'firebase'
+        'firebase',
+        'textAngular'
     ]);
 
     // Initialize Firebase
