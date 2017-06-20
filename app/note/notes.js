@@ -4,55 +4,32 @@
     .controller('NotesCtrl', NotesController);
 
 
-  function NotesController($firebaseObject, $stateParams) {
+  function NotesController($stateParams, $firebaseArray) {
 
-    const ref = firebase.database().ref('notes');
-    //const ref_ = roofRef.child('object');
-    //this.object = $firebaseObject(ref);
+	vm = this;
+    var database = firebase.database().ref('notes');
+    vm.notes = $firebaseArray(database);
   
-    //Funcoes padrão do Firebase para escutar mudanças e inclusões de um Child.
-    var notes = [];
-    ref.on('child_added', e => {
-      notes.push(e.val());
-      console.log(e.val());
+    /*//Funcoes padrão do Firebase para escutar mudanças e inclusões de um Child.
+    database.on('child_added', e => {
+      vm.notes.push(e.val());
     });
 
-    ref.on('child_removed', e => {
+    database.on('child_removed', e => {
       remove(e.val());
-    });
-
-    vm = this;
-
-
-    vm.notes = [
-      {
-        "body": "Body Teste",
-        "id": "ID0222021",
-        "date": "10/10/2017 08:00:00",
-        "title": "Nota 1"
-      },
-      {
-        "body": "Body Teste",
-        "id": "ID0222022",
-        "date": "10/10/2017 08:00:00",
-        "title": "Nota 2"
-      },
-      {
-        "body": "Body Teste",
-        "id": "ID0222023",
-        "date": "10/10/2017 08:00:00",
-        "title": "Nota 3"
-      }
-    ];
+    });*/
 
     function getNote(id) {
-      var note = vm.notes.reduce(function(x) { if (x.id == id) return x; else return ""});
+      var note = vm.notes.map(function(x) { if (x.id == id) return x; else return ""});
       return note;
     }
 
     (function isEditing () {
       $stateParams.id ? vm.editing = true : vm.editing = false;
-      vm.note = angular.copy(getNote($stateParams.id));
+	  if (vm.notes.length > 0) {
+		vm.note = angular.copy(getNote($stateParams.id));
+		console.log(note);
+      }	  
     })();
 
     vm.add = add;

@@ -10,7 +10,7 @@
   <div class="col s12 m6" ng-repeat="note in notesCtrl.notes | orderBy: 'date' | filter: searchNotes">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{note.title}}</span>
+        <span class="card-title">{{note.subject}}</span>
         <p>{{note.body}}</p>
       </div>
       <div class="card-action">
