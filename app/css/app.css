@@ -5,4 +5,8 @@
     font-weight: bold;
     font-style: italic;
     text-align: center;
- }
+}
+
+h1 a, h1 a:hover, h1 a:visited {
+   color: #7b1fa2;
+}
